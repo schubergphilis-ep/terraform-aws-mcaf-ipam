@@ -35,13 +35,13 @@ resource "aws_vpc_ipam_organization_admin_account" "default" {
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.3 |
-| <a name="requirement_aws"></a> [aws](#requirement\_aws) | >= 5.24.0 |
+| <a name="requirement_aws"></a> [aws](#requirement\_aws) | >= 6.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | >= 5.24.0 |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | >= 6.0 |
 
 ## Modules
 
@@ -66,8 +66,9 @@ No modules.
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | <a name="input_aws_ipam_pool"></a> [aws\_ipam\_pool](#input\_aws\_ipam\_pool) | The top level CIDR(s) available for usage on AWS | `list(string)` | n/a | yes |
-| <a name="input_pools"></a> [pools](#input\_pools) | n/a | <pre>map(object({<br>    cidr             = list(string)<br>    shared_principal = optional(list(string))<br>    tags             = optional(map(string))<br>  }))</pre> | n/a | yes |
+| <a name="input_pools"></a> [pools](#input\_pools) | n/a | <pre>map(object({<br/>    cidr             = list(string)<br/>    shared_principal = optional(list(string))<br/>    tags             = optional(map(string))<br/>  }))</pre> | n/a | yes |
 | <a name="input_ipam_description"></a> [ipam\_description](#input\_ipam\_description) | A description for the IPAM | `string` | `"Organization IPAM"` | no |
+| <a name="input_region"></a> [region](#input\_region) | The AWS region where resources will be created; if omitted the default provider region is used | `string` | `null` | no |
 | <a name="input_tags"></a> [tags](#input\_tags) | Map of tags to set on Terraform created resources | `map(string)` | `{}` | no |
 
 ## Outputs
